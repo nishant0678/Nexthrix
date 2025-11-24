@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nexthrix SMP</title>
+<link href="https://fonts.cdnfonts.com/css/minecraft-4" rel="stylesheet">
+
+<style>
+
+/* ---------------- GLOBAL BACKGROUND ---------------- */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #19002c, #250046, #3d0077);
+    background-size: 300% 300%;
+    animation: bgFlow 12s ease infinite;
+    color: white;
+}
+
+@keyframes bgFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ---------------- CRYSTAL GLASS NAVBAR ---------------- */
+nav {
+    width: 100%;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(18px);
+    background: rgba(255,255,255,0.08);
+    border-bottom: 2px solid rgba(255,255,255,0.25);
+    box-shadow: 0 0 20px rgba(150, 80, 255, 0.4);
+    position: sticky;
+    top: 0;
+    z-index: 200;
+}
+
+nav a {
+    text-decoration: none;
+    color: #e8d9ff;
+    margin-left: 25px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: white;
+    text-shadow: 0 0 12px #b26bff;
+}
+
+/* Mobile Nav Icon */
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* ---------------- GLASS MOBILE MENU ---------------- */
+.mobile-nav {
+    display: none;
+    flex-direction: column;
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(15px);
+    padding: 15px;
+    border-radius: 12px;
+    margin: 10px;
+    box-shadow: 0 0 15px rgba(160, 90, 255, 0.5);
+}
+
+.mobile-nav a {
+    padding: 12px;
+    text-align: center;
+    color: #f0e6ff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.mobile-nav a:hover {
+    background: rgba(255,255,255,0.2);
+    border-radius: 8px;
+}
+
+/* ---------------- CRYSTAL GLASS CARD SYSTEM ---------------- */
+.section {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 60px 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 330px;
+    padding: 25px;
+    background: rgba(255,255,255,0.13);
+    border: 2px solid rgba(255,255,255,0.3);
+    border-radius: 18px;
+    backdrop-filter: blur(16px);
+    box-shadow: 0 0 25px rgba(150, 80, 255, 0.5);
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.04);
+    box-shadow: 0 0 35px rgba(180, 110, 255, 0.8);
+}
+
+/* Lists inside cards */
+.card ul {
+    padding-left: 20px;
+}
+
+.card li {
+    margin-bottom: 10px;
+    color: #f1e7ff;
+}
+
+/* ---------------- FOOTER ---------------- */
+footer {
+    text-align: center;
+    padding: 25px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(10px);
+    border-top: 2px solid rgba(255,255,255,0.25);
+    margin-top: 50px;
+    color: #e6d9ff;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+@media (max-width: 768px) {
+    .nav-links a { display: none; }
+    .menu-icon { display: block; }
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="content-wrapper">
+
+<nav>
+  <div class="nav-links">
+    <img src="assets/logo.png" alt="Logo" style="height:40px;">
+    <a href="index.html">Home</a>
+    <a href="rules.html">Rules</a>
+    <a href="store.html">Store</a>
+    <a href="vote.html">Vote</a>
+    <a href="staff.html">Staff</a>
+  </div>
+  <div id="menu-btn" class="menu-icon">☰</div>
+</nav>
+
+<!-- Existing Gradient Shapes (kept original) -->
+<div class="section-ultra-gradients is-first">
+  <div class="ultra-gradient-wrapper">
+      <div class="main-shapes-wrapper">
+          <div class="shape-3"></div>
+          <div class="shape-2"></div>
+          <div class="shape-1"></div>
+      </div>
+      <div class="blending-group-wrapper">
+          <div class="shape-8"></div>
+          <div class="shape-9"></div>
+          <div class="shape-4"></div>
+          <div class="shape-5"></div>
+          <div class="shape-7"></div>
+          <div class="shape-6"></div>
+      </div>
+  </div>
+</div>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="mobile-nav">
+  <a href="index.html">Home</a>
+  <a href="rules.html">Rules</a>
+  <a href="store.html">Store</a>
+  <a href="vote.html">Vote</a>
+  <a href="staff.html">Staff</a>
+</div>
+
+<!-- ABOUT SECTION (Now Crystal Glass Cards) -->
+<div class="section" id="store">
+  <div class="card">
+    <h2>About the Server</h2>
+    <p>Welcome to our Minecraft world! Survival, events, custom builds, and a friendly community.</p>
+  </div>
+
+  <div class="card">
+    <h2>Features</h2>
+    <ul>
+      <li>24/7 Uptime</li>
+      <li>No Lag</li>
+      <li>Friendly Staff</li>
+      <li>Survival + Mini-games</li>
+    </ul>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2025 Nexthrix SMP </p>
+</footer>
+
+</div>
+
+<script>
+/* Mobile Menu Toggle */
+document.getElementById("menu-btn").addEventListener("click", () => {
+    const menu = document.getElementById("mobile-menu");
+    menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,353 @@
+* {
+    box-sizing: border-box
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Minecraft', Arial, sans-serif;
+    color: #fff;
+    overflow-x: hidden
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header.banner {
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2
+}
+
+.neon-title {
+    font-size: 4rem;
+    text-align: left;
+    color: #fff;
+    text-shadow: 0 0 10px #ff0000,0 0 20px #ff4444,0 0 40px #ff0000;
+    animation:  neonPulse 2s infinite alternate;
+    margin: 20px 0;
+    padding-left: 50px;
+}
+
+@keyframes neonPulse {
+    from {text-shadow: 0 0 10px #ff0000;}
+    to {text-shadow: 0 0 25px #ff0000,0 0 50px #ff4444;}
+}
+
+.section {
+    padding: 80px 20px 40px;
+    width: 100%;
+    padding-left: 50px;
+    position: relative;
+    z-index: 2
+}
+
+.card {
+    background: rgba(0,0,0,0.45);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.5);
+    margin-bottom: 20px;
+    transform: translateY(30px);
+    transition: 0.8s;
+    max-width: 1000px;
+    text-align: left;
+}
+
+.card.visible {
+    opacity: 1;
+    transform: translateY(0)
+}
+
+.ip-box {
+    background: rgba(255,255,255,0.08);
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    border: 1px solid rgba(255,255,255,0.12);
+    user-select: all;
+    color: #fff;
+    width: 500px;
+    margin: 10px 0;
+}
+
+.mc-btn {
+    padding: 12px 25px;
+    background: #ff0000;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    box-shadow: 4px 4px 0 #1a1a1a;
+    transition: 0.2s
+}
+
+.mc-btn:active {
+    transform: translate(3px,3px);
+    box-shadow: 1px 1px 0 #1a1a1a
+}
+
+nav {
+    width: 100%;
+    background: rgba(0,0,0,0.6);
+    padding: 15px 0;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 100
+}
+
+nav .nav-links a {
+    margin: 0 30px;
+    font-size: 1.1rem;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s
+}
+
+nav .nav-links a:hover {
+    color: #ff0000
+}
+
+.menu-icon {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer
+}
+
+.mobile-nav {
+    display: none;
+    flex-direction: column;
+    background: rgba(0,0,0,0.8);
+    position: fixed;
+    top: 0;right: 0;
+    width: 200px;
+    height: 100%;
+    padding-top: 60px;
+    z-index: 99
+}
+
+.mobile-nav.open {
+    display: flex
+}
+
+.mobile-nav a {
+    margin: 15px;
+    font-size: 1.2rem;
+    color: #fff;
+    text-decoration: none
+}
+
+.staff-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap
+}
+
+.staff-card {
+    text-align: center;
+    width: 100px;
+}
+
+.staff-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 12px;
+    object-fit: cover
+}
+
+footer {
+    text-align: center;
+    padding: 15px 0;
+    background: rgba(0,0,0,0.6);
+    width: 100%;
+    margin-top: auto;
+}
+
+footer a {
+    color: #ff0000;
+    text-decoration: none
+}
+
+footer a:hover {
+    text-decoration: underline
+}
+
+
+
+.ultra-gradient-wrapper {
+    width: 100vw;
+    height: 100vh;
+    filter: blur(20px);
+    background-color: #1b1b1b;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 1vw;
+    position: absolute;
+    top: 0%;
+    bottom: 0%;
+}
+
+.shape-1 {
+    width: 40em;
+    height: 40em;
+    background-color: #e0a0a0; /* light red */
+    border-radius: 999em;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    top: -24.7em;
+    left: 0;
+    right: 0;
+}
+
+.shape-2 {
+    width: 43em;
+    height: 40em;
+    background-color: #e0a0b5; /* light red-purple */
+    border-radius: 999em;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    top: -20em;
+    left: -27.4em;
+    right: 0;
+}
+
+.shape-3 {
+    width: 53em;
+    height: 100em;
+    background-color: #e0a0b5; /* light red-purple */
+    border-radius: 999em;
+    position: absolute;
+    top: -19.8em;
+    left: -26em;
+    right: 0;
+    transform: rotate(-28deg);
+}
+
+.shape-4 {
+    width: 65em;
+    height: 40em;
+    background-color: #e0b5a0; /* light red-orange */
+    border-radius: 999em;
+    margin-left: auto;
+    position: absolute;
+    top: -11.3em;
+    left: 0;
+    transform: rotate(40deg);
+}
+
+.shape-5 {
+    width: 30em;
+    height: 30em;
+    background-color: #e0a0a0; /* light red */
+    border-radius: 999em;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    top: -21.7em;
+    left: 0;
+    right: 0;
+}
+
+.shape-6 {
+    width: 66em;
+    height: 60em;
+    background-color: #e0a0a0; /* light red */
+    border-radius: 999em;
+    margin-left: auto;
+    position: absolute;
+    top: -14.2em;
+    right: -25em;
+    transform: rotate(60deg);
+}
+
+.shape-7 {
+    width: 20em;
+    height: 13em;
+    background-color: #e0a0b5; /* light red-purple */
+    border-radius: 999em;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    top: -4.1em;
+    left: 0;
+    right: -23.9em;
+    transform: rotate(40deg);
+}
+
+.shape-8 {
+    width: 47em;
+    height: 119em;
+    background-color: #e0a0a0; /* light red */
+    border-radius: 999em;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    top: -17.1em;
+    left: 26.7em;
+    right: 0;
+    transform: rotate(29deg);
+}
+
+.shape-9 {
+    width: 30em;
+    height: 119em;
+    background-color: #1b1b1b;
+    border-radius: 999em;
+    position: absolute;
+    top: -5.3em;
+    right: 1.2em;
+    transform: rotate(39deg);
+}
+
+.section-ultra-gradients {
+    height: 100vh;
+    min-height: 45em;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+}
+
+.section-ultra-gradients.is-first {
+    z-index: -1;
+    width: auto;
+    border-radius: 0rem 0rem var(--radius) var(--radius);
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    position: absolute;
+    top: 0%;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+}
+
+.main-shapes-wrapper {
+    filter: blur(120px);
+}
+
+.blending-group-wrapper {
+    z-index: 1;
+    filter: blur(120px);
+    mix-blend-mode: overlay;
+}
+
+.content-wrapper {
+    position: relative;
+    z-index: 2;
+}

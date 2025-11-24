@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nexthrix SMP – Rules</title>
+
+<link href="https://fonts.cdnfonts.com/css/minecraft-4" rel="stylesheet">
+
+<style>
+/* -----------------------------------
+           GLOBAL STYLE
+----------------------------------- */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  color: white;
+  overflow-x: hidden;
+  background: radial-gradient(circle at 20% 20%, #28002e, #0c0013 70%);
+}
+
+/* Crystal Nav */
+nav {
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(12px);
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.18);
+  padding: 12px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+nav a {
+  color: white;
+  font-family: 'Minecraft';
+  margin-left: 18px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  background: rgba(255, 0, 225, 0.25);
+  backdrop-filter: blur(6px);
+  color: #ff4cff;
+  text-shadow: 0 0 8px #ff00d9;
+}
+
+/* Mobile menu */
+.mobile-nav {
+  position: fixed;
+  right: -100%;
+  top: 0;
+  width: 60%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(14px);
+  padding-top: 80px;
+  transition: 0.4s;
+  z-index: 999;
+}
+
+.mobile-nav a {
+  display: block;
+  font-family: Minecraft;
+  padding: 20px;
+  color: white;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.menu-icon {
+  font-size: 30px;
+  cursor: pointer;
+  display: none;
+}
+
+/* Responsive */
+@media(max-width: 780px) {
+  .nav-links a { display: none; }
+  .menu-icon { display: block; }
+}
+
+/* Crystal Card */
+.card {
+  width: 80%;
+  max-width: 700px;
+  margin: auto;
+  margin-top: 40px;
+  background: rgba(255, 255, 255, 0.10);
+  backdrop-filter: blur(14px) brightness(1.25);
+  border-radius: 18px;
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 25px rgba(255, 0, 212, 0.25),
+              inset 0 0 10px rgba(255, 255, 255, 0.15);
+  padding: 25px 35px;
+  animation: fadeCard 1s ease-in-out;
+}
+
+@keyframes fadeCard {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.card h2 {
+  font-family: Minecraft;
+  color: #ffb8ff;
+  text-shadow: 0 0 10px #ff00d4;
+  text-align: center;
+}
+
+.card li {
+  margin-bottom: 12px;
+  font-size: 17px;
+  line-height: 1.5em;
+}
+
+.card p {
+  margin-top: 20px;
+  font-size: 16px;
+  opacity: .85;
+}
+
+/* Footer */
+footer {
+  margin-top: 40px;
+  text-align: center;
+  padding-bottom: 20px;
+  opacity: .7;
+  font-family: Minecraft;
+}
+
+/* Keep your gradient background shapes */
+.section-ultra-gradients {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+</style>
+
+</head>
+<body>
+
+<!-- Background Shapes -->
+<div class="section-ultra-gradients is-first">
+    <div class="ultra-gradient-wrapper">
+        <div class="main-shapes-wrapper">
+            <div class="shape-3"></div>
+            <div class="shape-2"></div>
+            <div class="shape-1"></div>
+        </div>
+        <div class="blending-group-wrapper">
+            <div class="shape-8"></div>
+            <div class="shape-9"></div>
+            <div class="shape-4"></div>
+            <div class="shape-5"></div>
+            <div class="shape-7"></div>
+            <div class="shape-6"></div>
+        </div>
+    </div>
+</div>
+
+<!-- CONTENT -->
+<div class="content-wrapper">
+
+<nav>
+  <div class="nav-links">
+    <img src="assets/logo.png" alt="Logo" style="height:40px;">
+    <a href="index.html">Home</a>
+    <a href="rules.html">Rules</a>
+    <a href="store.html">Store</a>
+    <a href="vote.html">Vote</a>
+    <a href="staff.html">Staff</a>
+  </div>
+  <div id="menu-btn" class="menu-icon">☰</div>
+</nav>
+
+<div id="mobile-menu" class="mobile-nav">
+  <a href="index.html">Home</a>
+  <a href="rules.html">Rules</a>
+  <a href="store.html">Store</a>
+  <a href="vote.html">Vote</a>
+  <a href="staff.html">Staff</a>
+</div>
+
+<!-- RULES SECTION -->
+<div class="section" id="rules">
+  <div class="card">
+    <h2>📢 Nexthrix Rules – Read Before You Play! 🌍</h2>
+    <ul>
+      <li>⚔️ No Hacking or Cheating – X-ray, kill aura, or any unfair modifications will result in a ban.</li>
+      <li>💬 Be Respectful – No toxic chat, racism, discrimination, or bullying.</li>
+      <li>🔁 No Duping – Exploiting glitches or bugs is strictly prohibited.</li>
+      <li>📢 No Spam / Advertising – Do not promote other servers or spam chat.</li>
+      <li>🧠 Use Common Sense – If it feels wrong, it’s probably not allowed.</li>
+      <li>⚔️ PvP & War – Only allowed with consent or organized events.</li>
+      <li>🔒 Protect Your Builds – Mark your base to avoid issues.</li>
+      <li>🛑 Respect Staff – Staff decisions are final.</li>
+      <li>🎉 Have Fun & Stay Cool 😎</li>
+      <li>🔮 No CPvP – Crystal PvP is banned.</li>
+      <li>💥 No Minecart TNT Exploits – (Stacked TNT minecarts).</li>
+    </ul>
+    <p>🚫 Breaking the rules may result in punishment.</p>
+    <p>✅ By playing, you agree to follow these rules.</p>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2025 Nexthrix SMP</p>
+</footer>
+
+</div>
+
+<script>
+// Mobile Menu Toggle
+document.getElementById("menu-btn").onclick = () => {
+  const menu = document.getElementById("mobile-menu");
+  menu.style.right = (menu.style.right === "0px") ? "-100%" : "0px";
+};
+</script>
+
+</body>
+</html>

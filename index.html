@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nexthrix SMP</title>
+
+<!-- Minecraft Font -->
+<link href="https://fonts.cdnfonts.com/css/minecraft-4" rel="stylesheet">
+
+<!-- ⭐ NEW: POPPINS FONT ⭐ -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* -----------------------------------
+           GLOBAL RESET
+----------------------------------- */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;  /* ⭐ UPDATED */
+  background: radial-gradient(circle at 20% 20%, #28002e, #0c0013 70%);
+  color: white;
+  overflow-x: hidden;
+}
+
+/* Fade Page */
+body.fade-page {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+body.fade-in {
+  opacity: 1 !important;
+}
+
+/* Loader */
+#loader {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  animation: fadeOutLoader 1s ease 2.5s forwards;
+}
+.loader-text {
+  font-size: 2rem;
+  color: #ff00e6;
+  font-family: 'Minecraft';
+  animation: pulse 1.5s infinite;
+}
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: .4; }
+  100% { opacity: 1; }
+}
+@keyframes fadeOutLoader {
+  to { opacity: 0; visibility: hidden; }
+}
+
+/* Floating Title */
+@keyframes floatText {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+/* ------------------------------
+      CRYSTAL GLASS UI
+------------------------------ */
+
+/* Crystal Nav */
+nav {
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(12px);
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.18);
+  padding: 12px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+nav a {
+  color: white;
+  font-family: 'Minecraft';
+  margin-left: 18px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  background: rgba(255, 0, 225, 0.25);
+  backdrop-filter: blur(6px);
+  color: #ff4cff;
+  text-shadow: 0 0 8px #ff00d9;
+}
+
+/* Neon Title */
+.neon-title {
+  font-family: 'Minecraft';
+  font-size: 3.5rem;
+  text-align: center;
+  margin-top: 35px;
+  margin-bottom: 10px;
+  color: #ffb8ff;
+  text-shadow:
+      0 0 10px #ff00ee,
+      0 0 30px #ff00d4,
+      0 0 60px #ff00e1;
+  animation: floatText 4s ease-in-out infinite;
+}
+
+/* Crystal Card */
+.card {
+  width: 340px;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.10);
+  backdrop-filter: blur(14px) brightness(1.25);
+  border-radius: 18px;
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 25px rgba(255, 0, 212, 0.25),
+              inset 0 0 10px rgba(255, 255, 255, 0.15);
+  padding: 25px;
+  text-align: center;
+  animation: fadeCard 1.2s ease-in-out;
+}
+
+@keyframes fadeCard {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Crystal IP Box */
+.ip-box {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  padding: 12px;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  font-family: 'Minecraft';
+  color: #ff9dff;
+  text-shadow: 0 0 10px #ff00d4;
+}
+
+/* Crystal Buttons */
+.mc-btn {
+  background: rgba(255, 255, 255, 0.14);
+  border: 2px solid rgba(255, 255, 255, 0.28);
+  padding: 10px 25px;
+  margin: 10px;
+  font-family: 'Minecraft';
+  font-size: 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  backdrop-filter: blur(10px);
+  color: white;
+  box-shadow: 0 0 14px rgba(255, 0, 225, 0.4);
+}
+
+.mc-btn:hover {
+  transform: scale(1.08);
+  background: rgba(255, 0, 225, 0.3);
+  box-shadow: 0 0 25px #ff00e6;
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Banner */
+.banner {
+  width: 100%;
+  height: 190px;
+  background: linear-gradient(90deg, #9900ff, #ff00c8, #5d00ff);
+  background-size: 300% 300%;
+  animation: bannerFlow 8s ease infinite;
+}
+@keyframes bannerFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Particles */
+#particles {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: -1;
+}
+.particle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: white;
+  opacity: .7;
+  border-radius: 50%;
+  animation: floatUp 8s linear infinite;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-120vh); opacity: 0; }
+}
+
+/* Footer */
+footer {
+  margin-top: 40px;
+  text-align: center;
+  padding-bottom: 20px;
+  opacity: .7;
+}
+
+</style>
+</head>
+
+<body class="fade-page">
+
+<!-- Loader -->
+<div id="loader">
+  <div class="loader-text">Loading Nexthrix SMP...</div>
+</div>
+
+<!-- Background Particles -->
+<div id="particles"></div>
+
+<!-- Navbar -->
+<nav>
+  <div class="nav-links">
+    <img src="assets/logo.png" alt="Logo" style="height:40px;">
+    <a onclick="playClick()" href="index.html">Home</a>
+    <a onclick="playClick()" href="rules.html">Rules</a>
+    <a onclick="playClick()" href="store.html">Store</a>
+    <a onclick="playClick()" href="vote.html">Vote</a>
+    <a onclick="playClick()" href="staff.html">Staff</a>
+  </div>
+</nav>
+
+<header class="banner"></header>
+
+<h1 class="neon-title">Nexthrix SMP</h1>
+
+<div class="section">
+  <div class="card">
+    <h2 style="font-family: Minecraft;">Server IP</h2>
+    <div id="server-ip" class="ip-box">nexthrixsmp.fun</div>
+
+    <button class="mc-btn" onclick="copyIP()">Copy IP</button>
+    <button id="music-toggle" class="mc-btn">🎵</button>
+
+    <div id="player-count" style="margin-top:10px; font-family: Minecraft;"></div>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2025 Nexthrix SMP</p>
+</footer>
+
+<script>
+/* Fade-in */
+window.addEventListener("load", () => {
+  document.body.classList.add("fade-in");
+});
+
+/* Click Sound */
+const clickSound = new Audio("https://assets.mixkit.co/sfx/preview/mixkit-select-click-1109.mp3");
+function playClick() { clickSound.play(); }
+
+/* Copy IP */
+function copyIP() {
+  navigator.clipboard.writeText("nexthrixsmp.fun");
+  alert("Copied IP!");
+}
+
+/* Particles */
+const particleContainer = document.getElementById("particles");
+for (let i = 0; i < 50; i++) {
+  let p = document.createElement("div");
+  p.classList.add("particle");
+  p.style.left = Math.random() * 100 + "%";
+  p.style.top = "110vh";
+  p.style.animationDelay = Math.random() * 8 + "s";
+  particleContainer.appendChild(p);
+}
+</script>
+
+</body>
+</html>
